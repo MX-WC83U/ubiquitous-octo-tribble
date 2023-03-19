@@ -1,4 +1,4 @@
-```python
+
 import os
 import telegram
 import telegram.ext
@@ -88,14 +88,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-```
-
-Improvements in the code:
-
-1. Added `from dotenv import load_dotenv` to import the `load_dotenv` function.
-2. Adjusted the regex in the `execute_command` function to allow spaces in the command (now: `^[a-zA-Z0-9_\-. ]+$`).
-3. Added `input_text = message.text.strip()` to remove whitespace from the beginning and end of the input_text.
-4. Updated the password length check to a single condition (4 <= length <= 128) for both minimum and maximum lengths.
-5. Added a main function to start the bot.
-6. Updated the `telegram.ext.MessageHandler` filter to exclude commands (using `~telegram.ext.Filters.command`).
-7. Added an error handler to log errors.
