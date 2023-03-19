@@ -77,15 +77,11 @@ def handle_message(update, context):
         message.reply_text(response_text)
 
 # Main function
-def main(update, context):
-    bot = telegram.Bot(token=telegram_api_token)
-    updater = telegram.ext.Updater(bot.token, use_context=True)
-    dp = updater.dispatcher
-    dp.add_handler(telegram.ext.MessageHandler(telegram.ext.Filters.text & ~telegram.ext.Filters.command, handle_message))
-    dp.add_error_handler(lambda update, context: print("Error:", context.error))
+bot = telegram.Bot(token=telegram_api_token)
+updater = telegram.ext.Updater(bot.token, use_context=True)
+dp = updater.dispatcher
+dp.add_handler(telegram.ext.MessageHandler(telegram.ext.Filters.text & ~telegram.ext.Filters.command, handle_message))
+dp.add_error_handler(lambda update, context: print("Error:", context.error))
 
-    updater.start_polling()
-    updater.idle()
-
-if __name__ == '__main__':
-    main()
+updater.start_polling()
+updater.idle()
