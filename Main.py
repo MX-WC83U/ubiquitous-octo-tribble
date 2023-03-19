@@ -77,7 +77,7 @@ def handle_message(update, context):
         message.reply_text(response_text)
 
 # Main function
-def main():
+def main(update, context):
     bot = telegram.Bot(token=telegram_api_token)
     updater = telegram.ext.Updater(bot.token, use_context=True)
     dp = updater.dispatcher
