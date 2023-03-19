@@ -78,7 +78,8 @@ def handle_message(update, context):
 
 # Main function
 def main():
-    updater = telegram.ext.Updater(token=telegram_api_token, use_context=True)
+    bot = telegram.Bot(token=telegram_api_token)
+    updater = telegram.ext.Updater(bot.token, use_context=True)
     dp = updater.dispatcher
     dp.add_handler(telegram.ext.MessageHandler(telegram.ext.Filters.text & ~telegram.ext.Filters.command, handle_message))
     dp.add_error_handler(lambda update, context: print("Error:", context.error))
