@@ -33,7 +33,17 @@ def execute_command(command):
         return e.output.decode('utf-8')
 
 # Define the function to handle messages
-@Client.on_message(filters.text & ~filters.command)
+@Client.on_message(
+    ~filters.private & filters.command(
+        ['password', 'eval', 'sh' , 'ytdl' ],
+        prefixes=trg
+    )
+)
+
+
+
+
+#@Client.on_message(filters.text & filters.command()
 def handle_message(client, message):
     input_text = message.text.strip()
     user_info = message.from_user
