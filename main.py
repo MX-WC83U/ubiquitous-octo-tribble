@@ -39,10 +39,6 @@ def execute_command(command):
         prefixes=trg
     )
 )
-
-
-
-
 #@Client.on_message(filters.text & filters.command()
 def handle_message(client, message):
     input_text = message.text.strip()
