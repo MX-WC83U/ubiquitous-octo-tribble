@@ -7,6 +7,7 @@ import re
 from dotenv import load_dotenv
 from pyrogram import Client, filters
 
+trg = "/"
 load_dotenv()  # Load the environment variables from the .env file
 api_id = os.environ.get('API_ID')
 api_hash = os.environ.get('API_HASH')
