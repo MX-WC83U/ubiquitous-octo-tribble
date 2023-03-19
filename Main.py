@@ -43,7 +43,7 @@ def handle_message(update, context):
             length = int(input_text[10:])
             if 4 <= length <= 128:
                 password = generate_password(length)
-                response_text = f"Your password is: {password}"
+                response_text = f"Your password is: `{password}`"
             else:
                 response_text = "Password length must be between 4 and 128 characters"
         except ValueError:
